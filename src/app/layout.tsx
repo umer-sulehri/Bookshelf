@@ -1,14 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import { Layout, FixedPlugin } from "@/components";
 import { AppProvider } from "@/lib/store";
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "NextJS Tailwind Campaign Page",
@@ -30,8 +23,18 @@ export default function RootLayout({
           src="https://api.nepcha.com/js/nepcha-analytics.js"
         ></script>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={roboto.className}>
+      <body className="font-sans">
         <Layout>
           <AppProvider>
             {children}
